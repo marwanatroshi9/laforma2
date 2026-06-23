@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+backend/media/
+
+# Node
+node_modules/
+.next/
+out/
+
+# Env
+.env
+*.local
+
+# Local dev / build artifacts
+*.db
+*.zip
+backend/big_test.*
+frontend/.claude/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Extracted package folders
+archipelago-platform-*/

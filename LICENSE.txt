@@ -1,0 +1,46 @@
+COMMERCIAL SOFTWARE LICENSE AGREEMENT
+Archipelago — Architecture Portfolio & Studio Management Platform
+
+This License Agreement ("Agreement") is entered into between:
+
+  LICENSOR: ____________________________  (the "Seller")
+  LICENSEE: ____________________________  (the "Buyer")
+  DATE:     ____________________________
+
+1. GRANT OF LICENSE
+   The Seller grants the Buyer a perpetual, non-exclusive license to use,
+   deploy, and modify this software ("the Software") for ONE (1) production
+   website operated by the Buyer or a single end-client of the Buyer.
+
+2. SOURCE CODE
+   The Buyer receives the complete source code and may modify it for their
+   own use and branding.
+
+3. RESTRICTIONS
+   The Buyer MAY NOT:
+   (a) resell, redistribute, sublicense, or republish the Software or its
+       source code, in whole or in part, as a template, boilerplate, or
+       product to third parties;
+   (b) use the Software to operate a competing website-template or
+       website-building business;
+   (c) remove or alter this license or any copyright notices in the source.
+
+   The Buyer MAY:
+   (a) deploy the Software to their own servers or hosting;
+   (b) customize branding, content, colors, fonts, and code for their site;
+   (c) hire third parties to perform such customization on their behalf.
+
+4. ADDITIONAL SITES
+   Each additional production website requires a separate license purchased
+   from the Seller.
+
+5. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED. THE SELLER SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+   LIABILITY ARISING FROM THE USE OF THE SOFTWARE.
+
+6. SUPPORT
+   Support and updates are provided only if separately agreed in writing
+   between the Seller and the Buyer.
+
+Seller signature: ____________________   Buyer signature: ____________________

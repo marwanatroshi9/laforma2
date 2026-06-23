@@ -1,0 +1,33 @@
+# Production overlay — adds an automatic-HTTPS reverse proxy (Caddy) in front
+# of the app and stops exposing the raw service ports to the internet.
+#
+# Usage:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+
+services:
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      - frontend
+    environment:
+      DOMAIN: ${DOMAIN:?set DOMAIN in .env}
+      ACME_EMAIL: ${ACME_EMAIL:?set ACME_EMAIL in .env}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+  # Only reachable through Caddy now — no public ports.
+  backend:
+    ports: []
+
+  frontend:
+    ports: []
+
+volumes:
+  caddy_data:
+  caddy_config:
