@@ -11,6 +11,9 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
+# Next.js bakes rewrite destinations at build time, so the backend address
+# must be present here (not just at runtime) for the /api and /media proxy.
+ENV BACKEND_INTERNAL_URL=http://backend:8000
 RUN npm run build
 
 # ---- runner ----
