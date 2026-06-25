@@ -34,13 +34,13 @@ export default function QuoteForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-8">
       <div className="grid gap-8 md:grid-cols-2">
-        <input name="full_name" required placeholder="Full name *" aria-label="Full name" className={field} />
-        <input name="email" type="email" required placeholder="Email *" aria-label="Email" className={field} />
+        <input name="full_name" required placeholder={`${t("form.fullName")} *`} aria-label={t("form.fullName")} className={field} />
+        <input name="email" type="email" required placeholder={`${t("form.email")} *`} aria-label={t("form.email")} className={field} />
       </div>
       <div className="grid gap-8 md:grid-cols-2">
-        <input name="phone" placeholder="Phone" aria-label="Phone" className={field} />
-        <select name="project_type" aria-label="Project type" className={`${field} appearance-none`} defaultValue="">
-          <option value="" disabled>Project type</option>
+        <input name="phone" placeholder={t("form.phone")} aria-label={t("form.phone")} className={field} />
+        <select name="project_type" aria-label={t("form.projectType")} className={`${field} appearance-none`} defaultValue="">
+          <option value="" disabled>{t("form.projectType")}</option>
           <option>Residential</option>
           <option>Commercial</option>
           <option>Cultural</option>
@@ -48,14 +48,14 @@ export default function QuoteForm() {
           <option>Masterplanning</option>
         </select>
       </div>
-      <select name="budget" aria-label="Estimated budget" className={`${field} appearance-none`} defaultValue="">
-        <option value="" disabled>Estimated budget</option>
+      <select name="budget" aria-label={t("form.budget")} className={`${field} appearance-none`} defaultValue="">
+        <option value="" disabled>{t("form.budget")}</option>
         <option>Under $100k</option>
         <option>$100k – $500k</option>
         <option>$500k – $2M</option>
         <option>$2M+</option>
       </select>
-      <textarea name="details" required rows={5} placeholder="Describe your project *" aria-label="Project details" className={field} />
+      <textarea name="details" required rows={5} placeholder={`${t("form.details")} *`} aria-label={t("form.details")} className={field} />
 
       <button
         type="submit"
@@ -63,13 +63,13 @@ export default function QuoteForm() {
         className="group relative overflow-hidden border border-line px-10 py-5 label text-ink disabled:opacity-50"
       >
         <span className="relative z-10 transition-colors group-hover:text-black">
-          {status === "loading" ? t("common.loading") : "Request a quote"}
+          {status === "loading" ? t("common.loading") : t("contact.requestQuote")}
         </span>
         <span className="absolute inset-0 -translate-x-full bg-accent transition-transform duration-500 ease-luxe group-hover:translate-x-0" />
       </button>
 
-      {status === "ok" && <p className="text-accent">Thank you — we will prepare a proposal and be in touch.</p>}
-      {status === "error" && <p className="text-red-400">Something went wrong. Please try again.</p>}
+      {status === "ok" && <p className="text-accent">{t("form.thanksQuote")}</p>}
+      {status === "error" && <p className="text-red-400">{t("form.error")}</p>}
     </form>
   );
 }

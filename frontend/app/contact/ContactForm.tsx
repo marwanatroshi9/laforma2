@@ -34,14 +34,14 @@ export default function ContactForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-8">
       <div className="grid gap-8 md:grid-cols-2">
-        <input name="full_name" required placeholder="Full name *" aria-label="Full name" className={field} />
-        <input name="email" type="email" required placeholder="Email *" aria-label="Email" className={field} />
+        <input name="full_name" required placeholder={`${t("form.fullName")} *`} aria-label={t("form.fullName")} className={field} />
+        <input name="email" type="email" required placeholder={`${t("form.email")} *`} aria-label={t("form.email")} className={field} />
       </div>
       <div className="grid gap-8 md:grid-cols-2">
-        <input name="phone" placeholder="Phone" aria-label="Phone" className={field} />
-        <input name="subject" placeholder="Subject" aria-label="Subject" className={field} />
+        <input name="phone" placeholder={t("form.phone")} aria-label={t("form.phone")} className={field} />
+        <input name="subject" placeholder={t("form.subject")} aria-label={t("form.subject")} className={field} />
       </div>
-      <textarea name="message" required rows={5} placeholder="Tell us about your project *" aria-label="Message" className={field} />
+      <textarea name="message" required rows={5} placeholder={`${t("form.projectMessage")} *`} aria-label={t("form.projectMessage")} className={field} />
 
       <button
         type="submit"
@@ -54,8 +54,8 @@ export default function ContactForm() {
         <span className="absolute inset-0 -translate-x-full bg-accent transition-transform duration-500 ease-luxe group-hover:translate-x-0" />
       </button>
 
-      {status === "ok" && <p className="text-accent">Thank you — we will be in touch shortly.</p>}
-      {status === "error" && <p className="text-red-400">Something went wrong. Please try again.</p>}
+      {status === "ok" && <p className="text-accent">{t("form.thanksContact")}</p>}
+      {status === "error" && <p className="text-red-400">{t("form.error")}</p>}
     </form>
   );
 }

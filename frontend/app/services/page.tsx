@@ -8,7 +8,7 @@ export default async function ServicesPage() {
   const services = await api.services();
   return (
     <div className="pb-20">
-      <PageHeader label="Capabilities" title="What we do, end to end." />
+      <PageHeader label="page.services.label" title="page.services.title" />
       <Services services={services} />
     </div>
   );

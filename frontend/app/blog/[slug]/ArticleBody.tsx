@@ -7,7 +7,7 @@ import { pick } from "@/lib/i18n";
 import Reveal from "@/components/Reveal";
 
 export default function ArticleBody({ post }: { post: BlogPost }) {
-  const { locale } = useSite();
+  const { locale, t } = useSite();
   const body = pick(post.body, locale);
 
   return (
@@ -43,7 +43,7 @@ export default function ArticleBody({ post }: { post: BlogPost }) {
           </div>
         )}
         <Link href="/blog" className="label mt-12 inline-block text-ink/60 hover:text-accent">
-          ← Back to journal
+          ← {t("blog.back")}
         </Link>
       </Reveal>
     </article>

@@ -7,9 +7,9 @@ import { pick } from "@/lib/i18n";
 import Reveal from "@/components/Reveal";
 
 export default function CareersList({ jobs }: { jobs: JobPosting[] }) {
-  const { locale } = useSite();
+  const { locale, t } = useSite();
   if (!jobs.length)
-    return <p className="px-6 py-20 text-center text-ink/50 md:px-12">No open positions right now.</p>;
+    return <p className="px-6 py-20 text-center text-ink/50 md:px-12">{t("careers.noPositions")}</p>;
 
   return (
     <section className="px-6 py-16 md:px-12">
@@ -26,7 +26,7 @@ export default function CareersList({ jobs }: { jobs: JobPosting[] }) {
                 </p>
               </div>
               <span className="label text-ink/40 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1">
-                Apply →
+                {t("careers.applyNow")} →
               </span>
             </Link>
           </Reveal>

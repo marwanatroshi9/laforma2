@@ -36,7 +36,7 @@ export default function JobDetail({ job }: { job: JobPosting }) {
     <div className="px-6 pb-32 pt-36 md:px-12 md:pt-48">
       <div className="mx-auto grid max-w-[1600px] gap-16 lg:grid-cols-2">
         <div>
-          <Link href="/careers" className="label text-ink/50 hover:text-accent">← All positions</Link>
+          <Link href="/careers" className="label text-ink/50 hover:text-accent">← {t("careers.allPositions")}</Link>
           <h1 className="mt-6 font-heading text-5xl leading-tight text-ink md:text-7xl">
             {pick(job.title, locale)}
           </h1>
@@ -47,25 +47,25 @@ export default function JobDetail({ job }: { job: JobPosting }) {
         </div>
 
         <div className="lg:pt-16">
-          <h2 className="mb-8 font-heading text-3xl text-ink">Apply now</h2>
+          <h2 className="mb-8 font-heading text-3xl text-ink">{t("careers.applyNow")}</h2>
           <form onSubmit={onSubmit} className="space-y-7">
-            <input name="full_name" required placeholder="Full name *" aria-label="Full name" className={field} />
-            <input name="email" type="email" required placeholder="Email *" aria-label="Email" className={field} />
-            <input name="phone" placeholder="Phone" aria-label="Phone" className={field} />
-            <input name="cv_url" placeholder="Link to CV / portfolio" aria-label="Link to CV or portfolio" className={field} />
-            <textarea name="message" rows={4} placeholder="Cover note" aria-label="Cover note" className={field} />
+            <input name="full_name" required placeholder={`${t("form.fullName")} *`} aria-label={t("form.fullName")} className={field} />
+            <input name="email" type="email" required placeholder={`${t("form.email")} *`} aria-label={t("form.email")} className={field} />
+            <input name="phone" placeholder={t("form.phone")} aria-label={t("form.phone")} className={field} />
+            <input name="cv_url" placeholder={t("form.cv")} aria-label={t("form.cv")} className={field} />
+            <textarea name="message" rows={4} placeholder={t("form.coverNote")} aria-label={t("form.coverNote")} className={field} />
             <button
               type="submit"
               disabled={status === "loading"}
               className="group relative overflow-hidden border border-line px-10 py-5 label text-ink disabled:opacity-50"
             >
               <span className="relative z-10 transition-colors group-hover:text-black">
-                {status === "loading" ? t("common.loading") : "Submit application"}
+                {status === "loading" ? t("common.loading") : t("careers.submit")}
               </span>
               <span className="absolute inset-0 -translate-x-full bg-accent transition-transform duration-500 ease-luxe group-hover:translate-x-0" />
             </button>
-            {status === "ok" && <p className="text-accent">Thank you — we received your application.</p>}
-            {status === "error" && <p className="text-red-400">Something went wrong. Please try again.</p>}
+            {status === "ok" && <p className="text-accent">{t("form.thanksApply")}</p>}
+            {status === "error" && <p className="text-red-400">{t("form.error")}</p>}
           </form>
         </div>
       </div>

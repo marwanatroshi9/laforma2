@@ -8,7 +8,7 @@ export default async function AwardsPage() {
   const awards = await api.awards();
   return (
     <div className="pb-20">
-      <PageHeader label="Recognition" title="Honours & accolades." />
+      <PageHeader label="page.awards.label" title="page.awards.title" />
       <Awards awards={awards} />
     </div>
   );

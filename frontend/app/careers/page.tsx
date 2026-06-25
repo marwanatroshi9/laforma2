@@ -8,7 +8,7 @@ export default async function CareersPage() {
   const jobs = await api.jobs();
   return (
     <div className="min-h-[60vh] pb-32">
-      <PageHeader label="Careers" title="Build the future with us." intro="Join an award-winning studio shaping spaces that endure." />
+      <PageHeader label="page.careers.label" title="page.careers.title" intro="page.careers.intro" />
       <CareersList jobs={jobs} />
     </div>
   );

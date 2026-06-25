@@ -7,9 +7,9 @@ import { useSite } from "@/providers/SiteProvider";
 import { pick } from "@/lib/i18n";
 
 export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
-  const { locale } = useSite();
+  const { locale, t } = useSite();
   if (!posts.length)
-    return <p className="px-6 py-20 text-center text-ink/50 md:px-12">No articles yet.</p>;
+    return <p className="px-6 py-20 text-center text-ink/50 md:px-12">{t("blog.noArticles")}</p>;
 
   return (
     <section className="px-6 py-16 md:px-12">
