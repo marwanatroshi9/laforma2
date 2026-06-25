@@ -18,7 +18,7 @@ export default function ContactInfo({ settings }: { settings: SiteSettings | nul
       {settings.phone && (
         <div>
           <span className="label text-accent">{t("contact.phone")}</span>
-          <p className="mt-2" dir="ltr">{settings.phone}</p>
+          <p className="mt-2"><bdi>{settings.phone}</bdi></p>
         </div>
       )}
       {settings.address && (

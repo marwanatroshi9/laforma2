@@ -24,7 +24,7 @@ export default function Footer() {
             <p className="label mb-4 text-accent">{t("nav.contact")}</p>
             <ul className="space-y-2 text-sm text-ink/70">
               {settings?.email && <li>{settings.email}</li>}
-              {settings?.phone && <li dir="ltr">{settings.phone}</li>}
+              {settings?.phone && <li><bdi>{settings.phone}</bdi></li>}
               {settings?.address && <li>{pick(settings.address, locale, "")}</li>}
             </ul>
           </div>
